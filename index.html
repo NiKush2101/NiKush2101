@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero">
+        <img src="couple-photo.jpg" alt="Couple Photo" id="couple-photo">
+        <h1>Save the Date!</h1>
+        <a href="#rsvp-form">RSVP</a>
+    </div>
+    <div id="rsvp-form">
+        <h2>RSVP</h2>
+        <form id="form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="number" placeholder="Your Phone Number" required>
+            <select name="confirmation" required>
+                <option value="">Will you attend?</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <a href="about.html">About Us</a>
+        <a href="events.html">Events & Venue</a>
+    </footer>
+</body>
+</html>
+
+
+<script>
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const number = event.target.number.value;
+        const confirmation = event.target.confirmation.value;
+
+        console.log(`Name: ${name}, Number: ${number}, Coming: ${confirmation}`);
+        alert(`Thank you for your RSVP, ${name}!`);
+        event.target.reset();
+    });
+</script>
